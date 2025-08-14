@@ -1,0 +1,44 @@
+{
+  "name": "voxfoundry",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered multi-actor audiobook generation platform",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheMrFish3D/VoxFoundry.git"
+  },
+  "workspaces": [
+    "packages/*",
+    "packages/frontend/*",
+    "packages/backend/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "clean": "turbo run clean",
+    "db:migrate": "cd packages/backend/api-gateway && npm run db:migrate",
+    "db:seed": "cd packages/backend/api-gateway && npm run db:seed",
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up -d",
+    "docker:prod": "docker-compose -f docker-compose.prod.yml up -d",
+    "setup": "npm install && npm run docker:dev && npm run db:migrate && npm run db:seed"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.1.0",
+    "turbo": "^1.10.16",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "packageManager": "npm@10.2.4"
+}
