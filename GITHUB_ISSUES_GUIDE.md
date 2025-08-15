@@ -2,6 +2,42 @@
 
 This document provides templates and guidance for creating GitHub issues from the VoxFoundry development plan.
 
+## 🏷️ GitHub Issues Setup
+
+### Step 1: Create Required Labels (REQUIRED FIRST)
+
+Before creating any issues, you must create the required labels:
+
+```bash
+# Create all required labels
+./scripts/create-github-issues.sh labels
+
+# Preview what labels would be created (dry-run)
+./scripts/create-github-issues.sh --dry-run labels
+```
+
+**Required Labels (27 total):**
+- **Epic labels (8)**: epic:foundation, epic:authentication, epic:epub-processing, epic:ai-integration, epic:voice-management, epic:voice-synthesis, epic:frontend, epic:testing
+- **Priority labels (4)**: priority:critical, priority:high, priority:medium, priority:low  
+- **Effort labels (5)**: effort:1-day, effort:2-days, effort:3-days, effort:4-days, effort:5-days
+- **Chunk labels (6)**: chunk:foundation-infrastructure, chunk:authentication-core, chunk:epub-ai-integration, chunk:voice-management, chunk:frontend-applications, chunk:testing-quality
+- **Special labels (4)**: validation, checkpoint, agent-ready, blocked
+
+### Step 2: Create Issues
+
+After labels are created, create issues in organized chunks:
+
+```bash
+# Create foundation issues (start here)
+./scripts/create-github-issues.sh chunk1
+
+# Create validation checkpoints  
+./scripts/create-github-issues.sh validation
+
+# Preview all issues (dry-run)
+./scripts/create-github-issues.sh --dry-run all
+```
+
 ## 📋 Issue Creation Process
 
 ### Phase 1: Foundation & Infrastructure (Issues #1-3, #6)
