@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log*
+.npm
+.env*.local
+.next
+dist
+build
+coverage
+.nyc_output
+.git
+.gitignore
+README.md
+.eslintcache
+.DS_Store
+*.tgz
+*.tar.gz

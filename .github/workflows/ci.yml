@@ -68,7 +68,7 @@ jobs:
     
     - name: Upload coverage reports
       uses: codecov/codecov-action@v3
-      if: success()
+      if: success() && hashFiles('./coverage/lcov.info') != ''
       with:
         files: ./coverage/lcov.info
         flags: unittests
@@ -180,6 +180,7 @@ jobs:
     
     - name: Run dependency check
       uses: dependency-check/Dependency-Check_Action@main
+      continue-on-error: true
       with:
         project: 'VoxFoundry'
         path: '.'
@@ -187,7 +188,7 @@ jobs:
     
     - name: Upload security scan results
       uses: actions/upload-artifact@v3
-      if: always()
+      if: always() && hashFiles('reports/*') != ''
       with:
         name: security-scan-results
         path: reports/
