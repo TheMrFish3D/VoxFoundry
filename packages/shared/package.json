@@ -8,8 +8,9 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "lint": "eslint src --ext .ts",
+    "lint": "eslint . --ext .ts --ignore-path ../../.gitignore",
     "type-check": "tsc --noEmit",
+    "test": "echo \"No tests yet for @voxfoundry/shared\"",
     "clean": "rm -rf dist"
   },
   "dependencies": {
