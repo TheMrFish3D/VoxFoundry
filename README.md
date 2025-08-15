@@ -72,6 +72,50 @@ VoxFoundry is built as a modern, scalable monorepo using:
 - PostgreSQL 15+
 - Redis 7+
 
+## 🚀 GitHub Issues Setup
+
+### Quick Start: Issue Creation
+
+Before development begins, create GitHub issues from the project plan:
+
+```bash
+# Step 1: Create all required labels (REQUIRED FIRST)
+./scripts/create-github-issues.sh labels
+
+# Step 2: Create foundation issues to start development
+./scripts/create-github-issues.sh chunk1
+
+# Step 3: Create validation checkpoints
+./scripts/create-github-issues.sh validation
+```
+
+### Available Commands
+
+```bash
+# Label management
+./scripts/create-github-issues.sh labels           # Create all 27 required labels
+./scripts/create-github-issues.sh --dry-run labels # Preview labels
+
+# Issue creation
+./scripts/create-github-issues.sh chunk1           # Foundation & Infrastructure
+./scripts/create-github-issues.sh validation      # Validation checkpoints  
+./scripts/create-github-issues.sh all             # All issues
+./scripts/create-github-issues.sh --dry-run all   # Preview all issues
+
+# Help
+./scripts/create-github-issues.sh --help          # Show usage guide
+```
+
+### Development Workflow
+
+1. **Create Labels**: Run `./scripts/create-github-issues.sh labels` first
+2. **Create Foundation Issues**: Run `./scripts/create-github-issues.sh chunk1`
+3. **Assign Issues**: Assign foundation issues to appropriate agents
+4. **Start Development**: Begin with Issue #1 (Monorepo Setup)
+5. **Validation**: Create checkpoints after each development phase
+
+For detailed guidance, see **[GitHub Issues Guide](GITHUB_ISSUES_GUIDE.md)**.
+
 ### Installation
 
 1. **Clone the repository**
